@@ -37,11 +37,10 @@ def einde():
 
 
 def startround():
-    print dj.arrayChosen
-    print dj.trackChosen
     raw_input()
 
 intro()
+dj.randomizeArray()
 
 while boolGameloop:
     # all the functions executed in their respective order
