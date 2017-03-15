@@ -4,6 +4,10 @@ import pygame
 pygame.init()
 
 class DJ:
+    # game sounds
+    soundCorrect = Track("", 'sounds/correct.ogg')
+    soundIncorrect = Track("", 'sounds/incorrect.ogg')
+
     # put song variables here in this format: trackName = Track("string of song to be displayed", 'music/filename.ogg')
     trackRickAstleyNever = Track("Never gonna give you up", 'music/rick.ogg')
     trackShootingStars = Track("Shooting Stars", 'music/shoot.ogg')
