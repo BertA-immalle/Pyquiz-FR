@@ -49,15 +49,15 @@ def startround():
         global intScore
         print textRonde2
         for i in xrange(4):
-            print dj.arrayChosen[i].name
+            print  "{0} - ".format(i) + dj.arrayChosen[i].name
         answer = raw_input(textRonde3 + Layout.end)
-        if answer == dj.trackChosen.name:
+        if answer == dj.trackchosenIndex:
             dj.soundCorrect.playsong()
             print Layout.bold + Layout.green + textRonde5 + Layout.end
             print Layout.bold + textRonde6 + Layout.end
             intScore += 1
             raw_input(textEnter)
-        elif answer in dj.arrayChosen.name:
+        elif answer is int[1:4]:
             dj.soundIncorrect.playsong()
             print Layout.bold + Layout.red + textRonde4.format(dj.trackChosen.name) + Layout.end
             raw_input(textEnter)
