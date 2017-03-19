@@ -25,9 +25,8 @@ class DJ:
     ]
 
     arrayRandomSongs = []
-    arrayChosen = []
+    dictChosen = {}
     trackChosen = ""
-    trackchosenIndex = ""
 
     def randomizeArray(self):
         del self.arrayRandomSongs[:] # wipes array of all contents without making a new one
@@ -35,13 +34,11 @@ class DJ:
         random.shuffle(self.arrayRandomSongs)
 
     def chooseListing(self):
-        del self.arrayChosen[:] # same here
+        del self.dictChosen[:] # same here
         for i in xrange(4):
-            self.arrayChosen.append(self.arrayRandomSongs[i])
+#            self.dictChosen.append(self.arrayRandomSongs[i])
+            self.dictChosen.update({i: self.arrayRandomSongs[i]})
         del self.arrayRandomSongs[0:3]
 
     def chooseTrack(self):
-        self.trackChosen = random.choice(self.arrayChosen)
-list = [1,2,3,4]
-list_wi = [(num,i) for i, num in enumerate(list)]
-random.shuffle(list_wi)
+        self.trackChosen = random.choice(self.dictChosen)
