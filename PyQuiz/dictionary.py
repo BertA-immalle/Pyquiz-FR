@@ -41,12 +41,13 @@ class DJ:
         del self.arrayRandomSongs[0:3]
 
     def chooseTrack(self):
-        rdnumber = random.randint(1,4)
-        self.trackChosen = {rdnumber: self.dictChosen.get(rdnumber)}
-        self.trackKey = str(self.trackChosen.keys())
+        rdnumber = random.randint(0,3)
+        self.trackChosen = self.dictChosen.get(rdnumber)
+        self.trackKey = rdnumber + 1
 
 # Test object
-"""dj = DJ()
+"""
+dj = DJ()
 dj.randomizeArray()
 dj.chooseListing()
 dj.chooseTrack()

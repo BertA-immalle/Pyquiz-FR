@@ -29,6 +29,7 @@ def intro():
         print Layout.red + textError1
         naamopgeven()
     print Layout.bold + textIntro3.format(strNaam) + Layout.end
+    time.sleep(2)
 
 
 def einde():
@@ -43,25 +44,26 @@ def startround():
     print Layout.bold + textRonde1.format(intRonde)
     dj.chooseListing()
     dj.chooseTrack()
-    dj.trackChosen.playsong()
+    #dj.trackChosen.playsong()
+    print "The song is {0}.".format(dj.trackChosen.name)
 
     def internalround():
         global intScore
         print textRonde2
         for i in xrange(4):
-            print  "{0} - ".format(i) + dj.dictChosen[i].name
+            print  "{0} - ".format(i + 1) + dj.dictChosen[i].name
         answer = raw_input(textRonde3 + Layout.end)
-        if answer > 4:
+        if answer > '4':
             print Layout.bold + Layout.red + textError2 + Layout.end
             raw_input(textEnter)
             internalround()
-        elif answer == dj.trackKey:
+        elif answer == str(dj.trackKey):
             dj.soundCorrect.playsong()
             print Layout.bold + Layout.green + textRonde5 + Layout.end
             print Layout.bold + textRonde6 + Layout.end
             intScore += 1
             raw_input(textEnter)
-        elif answer is int[1:4]:
+        elif answer == '1' or '2' or '3' or '4':
             dj.soundIncorrect.playsong()
             print Layout.bold + Layout.red + textRonde4.format(dj.trackChosen.name) + Layout.end
             raw_input(textEnter)
